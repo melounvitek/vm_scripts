@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# tpb_magnets.sh
+# deps: curl, jq
+
+set -euo pipefail
+if [ $# -lt 1 ]; then
+  echo "Usage: $0 <search terms...>" >&2
+  exit 1
+fi
+
+query="$(printf '%s' "$*" | jq -sRr @uri)"
+url="https://apibay.org/q.php?q=${query}&cat="
+
+curl -sL "$url" \
+| jq -r '
+  sort_by((.seeders|tonumber)) | reverse | .[:5] |
+  .[] 
+  | select(.info_hash != null and .info_hash != "")
+  | {name: .name, dn:(.name|@uri), hash:.info_hash, xl:.size, seeders:.seeders}
+  | "\(.seeders) seeders | \(.name)\nmagnet:?xt=urn:btih:\(.hash)&dn=\(.dn)&xl=\(.xl)\n"
+'
