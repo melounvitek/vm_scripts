@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# tpb_magnets.sh
-# deps: curl, jq
+# deps: curl, jq, numfmt (coreutils)
 
 set -euo pipefail
 if [ $# -lt 1 ]; then
@@ -16,6 +15,12 @@ curl -sL "$url" \
   sort_by((.seeders|tonumber)) | reverse | .[:5] |
   .[] 
   | select(.info_hash != null and .info_hash != "")
-  | {name: .name, dn:(.name|@uri), hash:.info_hash, xl:.size, seeders:.seeders}
-  | "\(.seeders) seeders | \(.name)\nmagnet:?xt=urn:btih:\(.hash)&dn=\(.dn)&xl=\(.xl)\n"
-'
+  | [.seeders, .name, .info_hash, (.name|@uri), .size]
+  | @tsv
+' \
+| while IFS=$'\t' read -r seeders name hash dn size; do
+    hr_size=$(numfmt --to=iec --suffix=B "$size")
+    echo "$seeders seeders | $hr_size | $name"
+    echo "magnet:?xt=urn:btih:$hash&dn=$dn&xl=$size"
+    echo
+  done
