@@ -1,0 +1,26 @@
+name: Gotsha
+
+on:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install Gotsha
+        run: gem install gotsha
+
+      - name: Fetch Gotsha notes
+        run: GOTSHA_CI=1 gotsha fetch
+
+      - name: Show tests output
+        run: GOTSHA_CI=1 gotsha show
