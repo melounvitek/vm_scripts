@@ -1,0 +1,107 @@
+Tests passed:
+
+/usr/bin/env: ‘ruby --yjit’: No such file or directory
+/usr/bin/env: use -[v]S to pass options in shebang lines
+
+Etrusted::ApiConnection
+  .create_order_event!
+[32m    passes serialized order to #post[0m
+
+Etrusted::OrderEvent
+[32m  returns hash with the product[0m
+
+Customer
+[32m  is valid with valid attributes[0m
+[32m  is not valid without an email[0m
+[32m  is not valid without a password[0m
+[32m  is not valid with an invalid ICO format[0m
+[32m  is valid with a valid ICO format[0m
+[32m  is valid with a valid ICO format[0m
+[32m  is valid with a valid DIC format[0m
+  associations
+[32m    is expected to have many carts[0m
+[32m    is expected to have many orders[0m
+[32m    is expected to have many addresses class_name => CustomerAddress[0m
+[32m    is expected to have many customer_credits[0m
+[32m    is expected to have one distributor[0m
+[32m    is expected to have many card_tokens[0m
+[32m    is expected to have many customer_identities[0m
+[32m    is expected to have many comments[0m
+[32m    is expected to have many club_memberships[0m
+[32m    is expected to have many favorite_products[0m
+[32m    is expected to have many push_notifications_tokens[0m
+[32m    is expected to have many push_notifications[0m
+[32m    is expected to have many customer_badges[0m
+[32m    is expected to have many customer_consents[0m
+[32m    is expected to have many customer_stripe_payment_methods[0m
+  callbacks
+[32m    sets default values before create[0m
+[32m    sets nameday after commit[0m
+
+GET /api/v1/cart
+  when cart has one product with decimal price
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:28)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:28)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:28)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:28)
+[32m    returns status 200[0m
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:28)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:28)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:28)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:28)
+[32m    does not round `totalPriceWithCredits` attribute[0m
+
+GET /api/v1/customer/favorite_products
+  with single favorite product, having bare minimum attributes filled only
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+[32m    returns status 200[0m
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+[32m    returns the proper product (only)[0m
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+[32m    returns empty (`nil`) JSON fields instead of raising error[0m
+  with product having a no longer valid retail price
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+[32m    returns status 200[0m
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+DEPRECATION WARNING: Time#to_s(:db) is deprecated. Please use Time#to_fs(:db) instead. (called from block in <class:Price> at /app/app/models/price.rb:24)
+[32m    returns the last known price[0m
+
+POST /api/v1/sign_up
+  response key `CartToken`
+    with mobile app header
+[32m      creates a new cart when no cart token header given[0m
+[32m      reuses existing cart when a cart token given[0m
+    without mobile app header
+[32m      does not create new cart[0m
+
+Order::RefundCreditsService
+  for order without credits
+[32m    does not create any new credits[0m
+  for order with some credits used
+[32m    creates new credits with opposite value, one new per one old[0m
+[32m    marks the old credits as used[0m
+
+Finished in 2.48 seconds (files took 1.17 seconds to load)
+[32m39 examples, 0 failures[0m
